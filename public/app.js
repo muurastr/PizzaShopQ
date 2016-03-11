@@ -15,5 +15,10 @@ function something()
 
 function add_to_cart(id)
 	{
-		alert('You added pizza with id: '+ id);
+		var key = 'product_' + id;
+		var x = window.localStorage.getItem(key);
+		// т.е. id хеша будет выглядеть "product_1" 
+		// чтобы можно было различать объекты, которые хранятся в localStorage
+		x = x * 1 + 1;
+		window.localStorage.setItem(key, x);
 	}
