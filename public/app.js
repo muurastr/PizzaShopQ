@@ -27,6 +27,7 @@ function add_to_cart(id)
 // 		alert('Items in your cart: ' + cart_get_number_of_items());
 
 		update_orders_input();
+		update_orders_buton(); 
 	}
 
 function cart_get_number_of_items()
@@ -55,6 +56,12 @@ function update_orders_input()
 	var orders = cart_get_orders(); //получение результата функции
 	$('#orders_input').val(orders); //синтаксис jQuery
 
+}
+
+function update_orders_buton() 
+{
+	var text = 'Cart (' + cart_get_number_of_items() + ')';
+	$('#orders_button').val(text);
 }
 
 function cart_get_orders()
